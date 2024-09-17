@@ -59,7 +59,7 @@ namespace ProduccionWebAPI.Controllers
 
             if (resultado is null) return StatusCode(500, "Error interno. Intente nuevamente.");
 
-            if (resultado == false) return NotFound();
+            else if (resultado == false) return NotFound();
 
             else return Ok("Articulo modificado correctamente.");
         }
@@ -73,7 +73,7 @@ namespace ProduccionWebAPI.Controllers
 
             if (resultado is null) return StatusCode(500, "Error interno. Intente nuevamente.");
 
-            if (resultado == false) return NotFound();
+            else if (resultado == false) return NotFound();
 
             else return Ok("Articulo eliminado correctamente.");
         }

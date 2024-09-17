@@ -8,14 +8,11 @@ namespace ProduccionBack.Datos.Utilidades
         private static DatosHelper instancia = new DatosHelper();
         private SqlConnection conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=Facu;Integrated Security=True;");
 
+        private DatosHelper() { }
+
         public static DatosHelper ObtenerInstancia()
         {
             return instancia;
-        }
-
-        public SqlConnection ObtenerConexion()
-        {
-            return conexion;
         }
 
         public DataTable? SPDataTable(string sp)

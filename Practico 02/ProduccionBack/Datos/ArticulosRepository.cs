@@ -7,6 +7,12 @@ namespace ProduccionBack.Datos
 {
     public class ArticulosRepository : IArticulosRepository
     {
+        private static ArticulosRepository instancia = new ArticulosRepository();
+
+        private ArticulosRepository() { }
+
+        public static ArticulosRepository ObtenerInstancia() { return instancia; }
+        
         public List<Articulo>? ObtenerTodos()
         {
             DataTable? dataTable = DatosHelper.ObtenerInstancia().SPDataTable("ObtenerArticulos");

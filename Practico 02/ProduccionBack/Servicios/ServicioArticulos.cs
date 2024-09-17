@@ -6,16 +6,15 @@ namespace ProduccionBack.Servicios
 {
     public class ServicioArticulos : IArticulosRepository
     {
-        private ArticulosRepository articulosRepository = new ArticulosRepository();
 
-        public List<Articulo>? ObtenerTodos() { return articulosRepository.ObtenerTodos(); }
+        public List<Articulo>? ObtenerTodos() { return ArticulosRepository.ObtenerInstancia().ObtenerTodos(); }
 
-        public Articulo? ObtenerPorId(int idArticulo) { return articulosRepository.ObtenerPorId(idArticulo); }
+        public Articulo? ObtenerPorId(int idArticulo) { return ArticulosRepository.ObtenerInstancia().ObtenerPorId(idArticulo); }
 
-        public bool? Crear(Articulo articulo) { return articulosRepository.Crear(articulo); }
+        public bool? Crear(Articulo articulo) { return ArticulosRepository.ObtenerInstancia().Crear(articulo); }
 
-        public bool? Modificar(Articulo articulo) { return articulosRepository.Modificar(articulo); }
+        public bool? Modificar(Articulo articulo) { return ArticulosRepository.ObtenerInstancia().Modificar(articulo); }
 
-        public bool? Eliminar(int idArticulo) { return articulosRepository.Eliminar(idArticulo); }
+        public bool? Eliminar(int idArticulo) { return ArticulosRepository.ObtenerInstancia().Eliminar(idArticulo); }
     }
 }
