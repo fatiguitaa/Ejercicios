@@ -201,8 +201,5 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-#Properties
-Properties/
-
 #.vs
 .vs/
